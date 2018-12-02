@@ -1,0 +1,92 @@
+<html>
+<head>
+<title>Tic-Tac-Toe</title>
+<style type="text/css">
+h1{text-align:center;
+		text-decoration:bold;
+		font-family:Cursive;
+		font-size:110;}
+body{background-color:#FCBBAD;}
+ td > input{height:150px;
+		width:150px;}
+table{border-color:red;
+	align:left;left:50px;
+	position:relative;}
+#temp{position:absolute;align:right;
+	top:450px;right:100px;
+	font-family:comic sans;
+	font-size:30;}
+#win{font-family:serif;
+		font-style:italic;
+		font-size:50;}	
+button{position:absolute;
+		align:right;top:250px;right:250px;
+		height:50px;width:200px;
+		font-family:brush script mt;font-size:30px;
+		background-color:#F7350B;}		
+</style></head>
+<body>
+
+<script type="text/javascript">
+var flag = 0;
+
+function changeImage(img){
+if(flag%2==0){
+img.src = "o.png";
+img.disabled=true;}
+else if(flag%2==1){
+img.src = "x.png" ;
+img.disabled=true;}
+flag += 1;}
+
+function check(){
+if(((document.getElementById("1").src.indexOf("x.png")!= -1)&&(document.getElementById("2").src.indexOf("x.png")!= -1)&&(document.getElementById("3").src.indexOf("x.png")!= -1))
+||((document.getElementById("4").src.indexOf("x.png")!= -1)&&(document.getElementById("5").src.indexOf("x.png")!= -1)&&(document.getElementById("6").src.indexOf("x.png")!= -1))
+||((document.getElementById("7").src.indexOf("x.png")!= -1)&&(document.getElementById("8").src.indexOf("x.png")!= -1)&&(document.getElementById("9").src.indexOf("x.png")!= -1))
+||((document.getElementById("1").src.indexOf("x.png")!= -1)&&(document.getElementById("4").src.indexOf("x.png")!= -1)&&(document.getElementById("7").src.indexOf("x.png")!= -1))
+||((document.getElementById("2").src.indexOf("x.png")!= -1)&&(document.getElementById("5").src.indexOf("x.png")!= -1)&&(document.getElementById("8").src.indexOf("x.png")!= -1))
+||((document.getElementById("3").src.indexOf("x.png")!= -1)&&(document.getElementById("6").src.indexOf("x.png")!= -1)&&(document.getElementById("9").src.indexOf("x.png")!= -1))
+||((document.getElementById("1").src.indexOf("x.png")!= -1)&&(document.getElementById("5").src.indexOf("x.png")!= -1)&&(document.getElementById("9").src.indexOf("x.png")!= -1))
+||((document.getElementById("3").src.indexOf("x.png")!= -1)&&(document.getElementById("5").src.indexOf("x.png")!= -1)&&(document.getElementById("7").src.indexOf("x.png")!= -1)))
+{document.getElementById("win").innerHTML="X wins!";}
+else if(((document.getElementById("1").src.indexOf("o.png")!= -1)&&(document.getElementById("2").src.indexOf("o.png")!= -1)&&(document.getElementById("3").src.indexOf("o.png")!= -1))
+||((document.getElementById("4").src.indexOf("o.png")!= -1)&&(document.getElementById("5").src.indexOf("o.png")!= -1)&&(document.getElementById("6").src.indexOf("o.png")!= -1))
+||((document.getElementById("7").src.indexOf("o.png")!= -1)&&(document.getElementById("8").src.indexOf("o.png")!= -1)&&(document.getElementById("9").src.indexOf("o.png")!= -1))
+||((document.getElementById("1").src.indexOf("o.png")!= -1)&&(document.getElementById("4").src.indexOf("o.png")!= -1)&&(document.getElementById("7").src.indexOf("o.png")!= -1))
+||((document.getElementById("2").src.indexOf("o.png")!= -1)&&(document.getElementById("5").src.indexOf("o.png")!= -1)&&(document.getElementById("8").src.indexOf("o.png")!= -1))
+||((document.getElementById("3").src.indexOf("o.png")!= -1)&&(document.getElementById("6").src.indexOf("o.png")!= -1)&&(document.getElementById("9").src.indexOf("o.png")!= -1))
+||((document.getElementById("1").src.indexOf("o.png")!= -1)&&(document.getElementById("5").src.indexOf("o.png")!= -1)&&(document.getElementById("9").src.indexOf("o.png")!= -1))
+||((document.getElementById("3").src.indexOf("o.png")!= -1)&&(document.getElementById("5").src.indexOf("o.png")!= -1)&&(document.getElementById("7").src.indexOf("o.png")!= -1)))
+{document.getElementById("win").innerHTML="O wins!";}
+else if(flag==9){document.getElementById("win").innerHTML="Match draw!";}
+}
+
+</script>
+
+<h1>Tic-Tac-Toe</h1>
+
+
+<table height="500px" width="500px" border="5px" >
+<tr>
+<td>   <input id="1" type="image" src="def.jpg" onclick="changeImage(this);check();"></td>
+<td>   <input id="2" type="image" src="def.jpg" onclick="changeImage(this);check();"></td>
+<td>   <input id="3" type="image" src="def.jpg" onclick="changeImage(this);check();"></td>
+</tr>
+
+<tr>
+<td><input id="4" type="image" src="def.jpg" onclick="changeImage(this);check();"></td>
+<td><input id="5" type="image" src="def.jpg" onclick="changeImage(this);check();"></td>
+<td><input id="6" type="image" src="def.jpg" onclick="changeImage(this);check();"></td>
+</tr>
+
+<tr>
+<td><input id="7" type="image" src="def.jpg" onclick="changeImage(this);check();"></td>
+<td><input id="8" type="image" src="def.jpg" onclick="changeImage(this);check();"></td>
+<td><input id="9" type="image" src="def.jpg" onclick="changeImage(this);check();"></td>
+</tr>
+</table>
+
+<button id="call" type="button" onClick="window.location.reload()"> RESTART </button>
+<div id="temp"><p id="win"></p></div>
+
+</body></html>
