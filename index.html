@@ -30,17 +30,13 @@ button{position:absolute;
 <body>
 
 <script type="text/javascript">
-var flag = 0;
+var flag = 0; var Enabled = 'true';
 
 function changeImage(img){
-if(flag%2==0){
-img.src = "o.png";
-img.disabled=true;}
-else if(flag%2==1){
-img.src = "x.png" ;
-img.disabled=true;}
-flag += 1;}
-
+if(Enabled == 'true'){
+if(flag%2==0){img.src = "o.png"; img.disabled=true;}
+else if(flag%2==1){ img.src = "x.png";img.disabled=true;}
+}else{img.disabled=true;} flag += 1;}
 function check(){
 if(((document.getElementById("1").src.indexOf("x.png")!= -1)&&(document.getElementById("2").src.indexOf("x.png")!= -1)&&(document.getElementById("3").src.indexOf("x.png")!= -1))
 ||((document.getElementById("4").src.indexOf("x.png")!= -1)&&(document.getElementById("5").src.indexOf("x.png")!= -1)&&(document.getElementById("6").src.indexOf("x.png")!= -1))
@@ -50,7 +46,7 @@ if(((document.getElementById("1").src.indexOf("x.png")!= -1)&&(document.getEleme
 ||((document.getElementById("3").src.indexOf("x.png")!= -1)&&(document.getElementById("6").src.indexOf("x.png")!= -1)&&(document.getElementById("9").src.indexOf("x.png")!= -1))
 ||((document.getElementById("1").src.indexOf("x.png")!= -1)&&(document.getElementById("5").src.indexOf("x.png")!= -1)&&(document.getElementById("9").src.indexOf("x.png")!= -1))
 ||((document.getElementById("3").src.indexOf("x.png")!= -1)&&(document.getElementById("5").src.indexOf("x.png")!= -1)&&(document.getElementById("7").src.indexOf("x.png")!= -1)))
-{document.getElementById("win").innerHTML="X wins!";document.getElementsByClassName("box").disabled="true";}
+{document.getElementById("win").innerHTML="X wins!";Enabled = 'false';}
 else if(((document.getElementById("1").src.indexOf("o.png")!= -1)&&(document.getElementById("2").src.indexOf("o.png")!= -1)&&(document.getElementById("3").src.indexOf("o.png")!= -1))
 ||((document.getElementById("4").src.indexOf("o.png")!= -1)&&(document.getElementById("5").src.indexOf("o.png")!= -1)&&(document.getElementById("6").src.indexOf("o.png")!= -1))
 ||((document.getElementById("7").src.indexOf("o.png")!= -1)&&(document.getElementById("8").src.indexOf("o.png")!= -1)&&(document.getElementById("9").src.indexOf("o.png")!= -1))
@@ -59,7 +55,7 @@ else if(((document.getElementById("1").src.indexOf("o.png")!= -1)&&(document.get
 ||((document.getElementById("3").src.indexOf("o.png")!= -1)&&(document.getElementById("6").src.indexOf("o.png")!= -1)&&(document.getElementById("9").src.indexOf("o.png")!= -1))
 ||((document.getElementById("1").src.indexOf("o.png")!= -1)&&(document.getElementById("5").src.indexOf("o.png")!= -1)&&(document.getElementById("9").src.indexOf("o.png")!= -1))
 ||((document.getElementById("3").src.indexOf("o.png")!= -1)&&(document.getElementById("5").src.indexOf("o.png")!= -1)&&(document.getElementById("7").src.indexOf("o.png")!= -1)))
-{document.getElementById("win").innerHTML="O wins!";document.getElementsByClassName("box").disabled="true";}
+{document.getElementById("win").innerHTML="O wins!";Enabled = 'false';}
 else if(flag==9){document.getElementById("win").innerHTML="Match draw!";}
 }
 
