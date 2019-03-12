@@ -50,7 +50,7 @@ if(((document.getElementById("1").src.indexOf("x.png")!= -1)&&(document.getEleme
 ||((document.getElementById("3").src.indexOf("x.png")!= -1)&&(document.getElementById("6").src.indexOf("x.png")!= -1)&&(document.getElementById("9").src.indexOf("x.png")!= -1))
 ||((document.getElementById("1").src.indexOf("x.png")!= -1)&&(document.getElementById("5").src.indexOf("x.png")!= -1)&&(document.getElementById("9").src.indexOf("x.png")!= -1))
 ||((document.getElementById("3").src.indexOf("x.png")!= -1)&&(document.getElementById("5").src.indexOf("x.png")!= -1)&&(document.getElementById("7").src.indexOf("x.png")!= -1)))
-{document.getElementById("win").innerHTML="X wins!";}
+{document.getElementById("win").innerHTML="X wins!";document.getElementsByClassName("box").disabled="true";}
 else if(((document.getElementById("1").src.indexOf("o.png")!= -1)&&(document.getElementById("2").src.indexOf("o.png")!= -1)&&(document.getElementById("3").src.indexOf("o.png")!= -1))
 ||((document.getElementById("4").src.indexOf("o.png")!= -1)&&(document.getElementById("5").src.indexOf("o.png")!= -1)&&(document.getElementById("6").src.indexOf("o.png")!= -1))
 ||((document.getElementById("7").src.indexOf("o.png")!= -1)&&(document.getElementById("8").src.indexOf("o.png")!= -1)&&(document.getElementById("9").src.indexOf("o.png")!= -1))
@@ -59,7 +59,7 @@ else if(((document.getElementById("1").src.indexOf("o.png")!= -1)&&(document.get
 ||((document.getElementById("3").src.indexOf("o.png")!= -1)&&(document.getElementById("6").src.indexOf("o.png")!= -1)&&(document.getElementById("9").src.indexOf("o.png")!= -1))
 ||((document.getElementById("1").src.indexOf("o.png")!= -1)&&(document.getElementById("5").src.indexOf("o.png")!= -1)&&(document.getElementById("9").src.indexOf("o.png")!= -1))
 ||((document.getElementById("3").src.indexOf("o.png")!= -1)&&(document.getElementById("5").src.indexOf("o.png")!= -1)&&(document.getElementById("7").src.indexOf("o.png")!= -1)))
-{document.getElementById("win").innerHTML="O wins!";}
+{document.getElementById("win").innerHTML="O wins!";document.getElementsByClassName("box").disabled="true";}
 else if(flag==9){document.getElementById("win").innerHTML="Match draw!";}
 }
 
